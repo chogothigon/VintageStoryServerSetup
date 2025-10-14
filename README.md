@@ -40,7 +40,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 ```
 
 This will ensure that you won't run into bugs caused by outdated software.
-##### Install .NET runtime 8
+#### Install .NET runtime 8
 
 Next we will install .NET runtime. Although previous versions of Vintage Story used .NET version 7, Vintage Story version 1.21+ requires .NET version 8. Without the proper version the server will crash upon boot so be sure to check that this is set up correctly before proceeding.
 
@@ -58,7 +58,7 @@ dotnet --version
 
 If it was installed correctly you should see something like this `8.0.120`.
 
-##### Create a user
+#### Create a user
 
 Running the game server as the root user can lead to very serious security risks. To mitigate that we are going to run the server using a new user called `gameserver`, which will have limited permissions tied to only the files required to run the server.
 
@@ -69,7 +69,7 @@ adduser --shell /bin/bash --disabled-password gameserver
 ```
 
 Press enter to input default blank values for all of the following fields and then enter Y when prompted.
-##### Create game directories
+#### Create game directories
 
 After creating the user we need to make the directories the server files will run from. Run these commands to build a server, data, and system directory:
 
@@ -78,7 +78,7 @@ mkdir -p /srv/gameserver/vintagestory
 mkdir -p /srv/gameserver/data/vs
 mkdir -p /usr/lib/systemd/system
 ```
-##### Download and extract game files
+#### Download and extract game files
 
 Finally we will download the game files to the vintagestory directory. Change your directory using this command:
 
@@ -104,11 +104,11 @@ chown -R gameserver:gameserver /srv/gameserver
 
 Congratulations! Now you have all the parts set up and ready to start configuring your server.
 
-#### 2. Server Configuration and Startup
+### Server Configuration and Startup
 
 After downloading all the required resources we can now startup the server but first we need to do some configuration.
 
-##### Create systemd service unit file
+#### Create systemd service unit file
 
 Using this command create a service unit file which we will run the server from:
 
@@ -138,7 +138,7 @@ Group=gameserver
 WantedBy=multi-user.target
 ```
 
-##### Create config file for rsyslog
+#### Create config file for rsyslog
 
 Next we will create a configuration file just like we did with the previous file using:
 
@@ -172,7 +172,7 @@ if $programname == 'VSSRV' then {
 if $programname == 'VSSRV' then ~
 ```
 
-##### Restart rsyslog and enable server
+#### Restart rsyslog and enable server
 
 To active rsystlog and start your vintagestory server type these commands:
 
@@ -188,11 +188,11 @@ Assuming everything is working your terminal should look something like this:
 (exit using `ctrl-c`)
 
 If it does, congratulations! your server is now up and running. Unfortunately it's still a little too secure and due to the default whitelist and router configurations, nobody can access it just yet.
-#### 3. Server Security and Management
+### Server Security and Management
 
 Now that you have a functional server it's time to open it up to the world. Configuration from this point forward is more up to the individual server admin so feel free to change things if you want. For example, if you want to you can continue to use the whitelist for access control instead of disabling. More information on that can be found here https://wiki.vintagestory.at/Guide:Dedicated_Server#Dedicated_server_on_Linux. However, I prefer to disable the whitelist and instead use a password so it is easier to share with my friends.
 
-##### Server Configuration
+#### Server Configuration
 
 Start by opening up the server configuration file:
 
@@ -208,7 +208,7 @@ systemctl restart vintagestoryserver.service
 
 You should now be able to join your server locally using its private IP address.
 
-##### Port configuration
+#### Port configuration
 
 Finally to open your server to the internet you need to enable port forwarding from your router. This can look a little different from router to router but the basics are the same. You will need your servers private IP address which can be found with this command:
 
