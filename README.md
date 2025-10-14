@@ -29,9 +29,9 @@ CPU: 4 Threads recommended. Frequency: 1 GHz base + 150 MHz per player
 ## Installation
 
 To get the server running will take some initial setup. We will be working through the terminal for most of this guide however you will need access to a web browser to get the link for the latest version of Vintage Story.
-#### 1. System Preparation
+### System Preparation
 
-##### Update your system
+#### Update your system
 
 Start by updating your Linux distro by running this command:
 
