@@ -145,7 +145,7 @@ WantedBy=multi-user.target
 ```
 
 The result should look like this:
-![[Nano.png]]
+![NanoScreen](./IMG/Nano.png)
 
  Save (`Ctrl+S`) and exit (`Ctrl+X`) the nano screen.
 #### Create config file for rsyslog
@@ -194,7 +194,7 @@ systemctl status vintagestoryserver.service
 ```
 
 If everything is working, your terminal should show the server as active:
-![[Working Server.png]]
+![WorkingScreen](./IMG/WorkingServer.png)
 
 If everything is working, your terminal should show the server as active.  
 (Exit with `Ctrl+C`.)
