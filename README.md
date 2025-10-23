@@ -145,7 +145,7 @@ WantedBy=multi-user.target
 ```
 
 The result should look like this:
-![NanoScreen](./IMG/Nano.png)
+![NanoScreen](IMG/Nano.png)
 
  Save (`Ctrl+S`) and exit (`Ctrl+X`) the nano screen.
 #### Create config file for rsyslog
@@ -194,7 +194,7 @@ systemctl status vintagestoryserver.service
 ```
 
 If everything is working, your terminal should show the server as active:
-![WorkingScreen](./IMG/WorkingServer.png)
+![WorkingScreen](IMG/WorkingServer.png)
 
 If everything is working, your terminal should show the server as active.  
 (Exit with `Ctrl+C`.)
@@ -215,7 +215,7 @@ Open the server configuration file:
 nano /srv/gameserver/data/vs/serverconfig.json
 ```
 
-Find the `"Password": null` line and set it to your desired password. 
+Find the `"Password": null` line and set it to your desired password surrounded by quotes. 
 Then, near the bottom, change `"WhitelistMode": 0` to `1`.  
 Save (`Ctrl+S`) and exit (`Ctrl+X`).
 
